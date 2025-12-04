@@ -1,21 +1,20 @@
-import { type Registry, registryItemSchema } from 'shadcn/schema';
-import { z } from 'zod/v3';
+import type { Registry } from 'shadcn/schema';
 
 import { hooks } from './hooks/_registry';
 import { lib } from './lib/_registry';
 import { ui } from './ui/_registry';
 
-const DEPRECATED_ITEMS = [];
+const DEPRECATED_ITEMS: string[] = [];
 
 // Shared between index and style for backward compatibility.
 const WIN95_STYLE = {
-  type: 'registry:style',
+  type: 'registry:style' as const,
   dependencies: ['class-variance-authority', 'lucide-react'],
   devDependencies: ['tw-animate-css'],
   registryDependencies: ['utils'],
   cssVars: {},
   files: [],
-};
+} as const;
 
 const registryItems = [
   {
@@ -33,10 +32,8 @@ const registryItems = [
   return !DEPRECATED_ITEMS.includes(item.name);
 });
 
-export const registry = {
+export const registry: Registry = {
   name: 'win95/ui',
   homepage: 'https://win95.abhi.now',
-  items: z.array(registryItemSchema).parse(registryItems) as z.infer<
-    typeof registryItemSchema
-  >[],
-} satisfies Registry;
+  items: registryItems as Registry['items'],
+};

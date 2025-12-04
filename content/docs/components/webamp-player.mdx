@@ -1,0 +1,56 @@
+---
+title: Webamp Player
+description: A Winamp-style music player component
+---
+
+## Installation
+
+```bash npm2yarn
+npm install webamp
+```
+
+## Usage
+
+```tsx
+import { WebampPlayer } from '@/components/ui/webamp-player';
+
+export default function App() {
+  return (
+    <WebampPlayer
+      tracks={[
+        {
+          metaData: {
+            artist: 'Artist Name',
+            title: 'Song Title',
+          },
+          url: '/audio/song.mp3',
+          duration: 213,
+        },
+      ]}
+      onClose={() => console.log('Closed')}
+    />
+  );
+}
+```
+
+## API
+
+### WebampPlayer
+
+| Prop            | Type            | Default  | Description                         |
+| --------------- | --------------- | -------- | ----------------------------------- |
+| `tracks`        | `WebampTrack[]` | Required | Array of audio tracks               |
+| `onClose`       | `() => void`    | -        | Callback when player is closed      |
+| `onMinimize`    | `() => void`    | -        | Callback when player is minimized   |
+| `onFocus`       | `() => void`    | -        | Callback when player receives focus |
+| `initialZIndex` | `number`        | `999`    | Initial z-index value               |
+| `className`     | `string`        | -        | Additional CSS classes              |
+
+### useWebampControls
+
+A utility hook for managing Webamp state:
+
+```tsx
+const { isMinimized, isFocused, restore, handleMinimize, handleFocus } =
+  useWebampControls();
+```

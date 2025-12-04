@@ -1,8 +1,9 @@
 import type { Registry } from 'shadcn/schema';
 
-import { hooks } from './hooks/_registry';
-import { lib } from './lib/_registry';
-import { ui } from './ui/_registry';
+import { components } from '@/registry/components/_registry';
+import { hooks } from '@/registry/hooks/_registry';
+import { lib } from '@/registry/lib/_registry';
+import { ui } from '@/registry/ui/_registry';
 
 const DEPRECATED_ITEMS: string[] = [];
 
@@ -28,6 +29,7 @@ const registryItems = [
   ...ui,
   ...lib,
   ...hooks,
+  ...components,
 ].filter((item) => {
   return !DEPRECATED_ITEMS.includes(item.name);
 });

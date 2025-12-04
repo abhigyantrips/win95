@@ -18,7 +18,7 @@ import * as React from "react"
 export const Index: Record<string, any> = {`;
 
   // Import the registry from the default location.
-  const { registry: importedRegistry } = await import(`../registry/index.ts`);
+  const { registry: importedRegistry } = await import(`../registry/index`);
 
   // Validate the registry schema.
   const parseResult = registrySchema.safeParse(importedRegistry);
@@ -86,7 +86,7 @@ export const Index: Record<string, any> = {`;
 
 async function buildRegistryJsonFile() {
   // 1. Import the registry.
-  const { registry: importedRegistry } = await import(`../registry/index.ts`);
+  const { registry: importedRegistry } = await import(`../registry/index`);
 
   // 2. Validate the registry schema.
   const parseResult = registrySchema.safeParse(importedRegistry);

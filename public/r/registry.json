@@ -33,6 +33,20 @@
       ],
       "files": [],
       "cssVars": {}
+    },
+    {
+      "name": "webamp-player",
+      "type": "registry:component",
+      "description": "A Winamp music player component using Webamp",
+      "dependencies": [
+        "webamp"
+      ],
+      "files": [
+        {
+          "path": "registry/components/webamp-player.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }

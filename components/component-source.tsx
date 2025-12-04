@@ -46,8 +46,8 @@ export async function ComponentSource({
   }
 
   // Fix imports.
-  // Replace @/registry/${style}/ with @/components/.
-  code = code.replaceAll(`@/registry/${styleName}/`, '@/components/');
+  // Replace @/registry/ with @/components/.
+  code = code.replaceAll('@/registry/', '@/components/');
 
   // Replace export default with export.
   code = code.replaceAll('export default', 'export');
@@ -100,7 +100,7 @@ function ComponentCode({
           className="text-code-foreground [&_svg]:text-code-foreground flex items-center gap-2 [&_svg]:size-4 [&_svg]:opacity-70"
           data-language={language}
         >
-          <FileIcon />
+          <FileIcon className="size-6 stroke-5" />
           {title}
         </figcaption>
       )}

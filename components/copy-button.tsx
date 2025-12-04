@@ -55,7 +55,11 @@ export function CopyButton({
           {...props}
         >
           <span className="sr-only">Copy</span>
-          {hasCopied ? <CheckIcon /> : <CopyIcon />}
+          {hasCopied ? (
+            <CheckIcon className="size-6 stroke-5" />
+          ) : (
+            <CopyIcon className="size-6 stroke-5" />
+          )}
         </Button>
       </TooltipTrigger>
       <TooltipContent>{hasCopied ? 'Copied' : tooltip}</TooltipContent>

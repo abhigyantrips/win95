@@ -47,3 +47,5 @@ resources:
 # Credits
 
 This project uses [W95font by Arne](https://arnesava.github.io/w95font/) as its font, which is licensed under [SIL Open Font License](https://en.wikipedia.org/wiki/SIL_Open_Font_License).
+
+It also uses icons from [Raster by Saran](https://raster.saran13raj.com/), which is licensed under the [ISC License](https://opensource.org/license/isc-license-txt/).
